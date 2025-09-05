@@ -1,4 +1,21 @@
-//Pascal
+----------------Fortran----------------
+
+program ParImpar
+    implicit none
+    integer :: numero
+
+    print *, 'Escribe un número entero:'
+    read(*,*) numero
+
+    if (mod(numero,2) == 0) then
+        print *, 'El número ', numero, ' es par.'
+    else
+        print *, 'El número ', numero, ' es impar.'
+    end if
+end program ParImpar
+
+
+----------------Pascal----------------
 
 program ParImpar;
     var 
@@ -13,3 +30,41 @@ begin
     else
         writeln('El número ', numero, ' es impar.');
 end.
+
+----------------C----------------
+
+#include <stdio.h>
+
+int main() {
+    int numero;
+
+    printf("Escribe un número entero: ");
+    scanf("%d", &numero);
+
+    if (numero % 2 == 0)
+        printf("El número %d es par.\n", numero);
+    else
+        printf("El número %d es impar.\n", numero);
+
+    return 0;
+}
+
+----------------Java----------------
+
+import java.util.Scanner;
+
+public class ParImpar {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int numero;
+
+        System.out.print("Escribe un número entero: ");
+        numero = sc.nextInt();
+
+        if (numero % 2 == 0)
+            System.out.println("El número " + numero + " es par.");
+        else
+            System.out.println("El número " + numero + " es impar.");
+    }
+}
+
