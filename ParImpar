@@ -1,0 +1,15 @@
+//Pascal
+
+program ParImpar;
+    var 
+    numero: integer;
+
+begin
+    writeln('Escribe un número entero: ');
+    readln(numero);
+    
+    if (numero mod 2 = 0) then
+        writeln('El número ', numero, ' es par.')
+    else
+        writeln('El número ', numero, ' es impar.');
+end.
