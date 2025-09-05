@@ -1,0 +1,64 @@
+----------------Fortran----------------
+
+program TablaMultiplicar
+    implicit none
+    integer :: numero, i
+
+    print *, 'Ingresa un número para generar su tabla de multiplicar:'
+    read(*,*) numero
+
+    do i = 1, 10
+        print '(I0,A,I0,A,I0)', numero, ' x ', i, ' = ', numero*i
+    end do
+end program TablaMultiplicar
+
+
+----------------Pascal----------------
+
+program TablaMultiplicar;
+
+var
+  numero, i: integer;
+
+begin
+  writeln('Ingresa un número para generar su tabla de multiplicar:');
+  readln(numero);
+
+  for i := 1 to 10 do
+    writeln(numero, ' x ', i, ' = ', numero * i);
+end.
+
+----------------C----------------
+
+#include <stdio.h>
+
+int main() {
+    int numero, i;
+
+    printf("Ingresa un número para generar su tabla de multiplicar: ");
+    scanf("%d", &numero);
+
+    for (i = 1; i <= 10; i++) {
+        printf("%d x %d = %d\n", numero, i, numero*i);
+    }
+
+    return 0;
+}
+
+----------------Java----------------
+
+import java.util.Scanner;
+
+public class TablaMultiplicar {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int numero;
+
+        System.out.print("Ingresa un número para generar su tabla de multiplicar: ");
+        numero = sc.nextInt();
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(numero + " x " + i + " = " + (numero * i));
+        }
+    }
+}
