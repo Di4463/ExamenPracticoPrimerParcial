@@ -1,0 +1,107 @@
+----------------Fortran----------------
+
+program cronometro
+  implicit none
+  integer :: horas, minutos, segundos
+
+  horas = 0
+  minutos = 0
+  segundos = 0
+
+  do
+    write(*,'(A,I2.2,A,I2.2,A,I2.2)') 'Cronometro: ', horas, ':', minutos, ':', segundos
+    call sleep(1)
+    segundos = segundos + 1
+    if (segundos == 60) then
+       segundos = 0
+       minutos = minutos + 1
+    end if
+    if (minutos == 60) then
+       minutos = 0
+       horas = horas + 1
+    end if
+  end do
+end program cronometro
+
+----------------Pascal----------------
+
+program Cronometro;
+uses crt, dos;
+
+var
+  horas, minutos, segundos: integer;
+
+begin
+  horas := 0;
+  minutos := 0;
+  segundos := 0;
+
+  repeat
+    clrscr;
+    writeln('Cronometro: ', horas:2, ':', minutos:2, ':', segundos:2);
+    delay(1000);
+
+    segundos := segundos + 1;
+    if segundos = 60 then
+    begin
+      segundos := 0;
+      minutos := minutos + 1;
+    end;
+    if minutos = 60 then
+    begin
+      minutos := 0;
+      horas := horas + 1;
+    end;
+
+  until false;
+end.
+
+----------------C----------------
+
+#include <stdio.h>
+#include <unistd.h>
+
+int main() {
+    int horas = 0, minutos = 0, segundos = 0;
+
+    while(1) {
+        printf("\rCronómetro: %02d:%02d:%02d", horas, minutos, segundos);
+        fflush(stdout);
+        sleep(1); 
+
+        segundos++;
+        if (segundos == 60) {
+            segundos = 0;
+            minutos++;
+        }
+        if (minutos == 60) {
+            minutos = 0;
+            horas++;
+        }
+    }
+
+    return 0;
+}
+
+----------------Java----------------
+
+public class Cronometro {
+    public static void main(String[] args) throws InterruptedException {
+        int horas = 0, minutos = 0, segundos = 0;
+
+        while(true) {
+            System.out.printf("\rCronometro: %02d:%02d:%02d", horas, minutos, segundos);
+            Thread.sleep(1000);
+
+            segundos++;
+            if (segundos == 60) {
+                segundos = 0;
+                minutos++;
+            }
+            if (minutos == 60) {
+                minutos = 0;
+                horas++;
+            }
+        }
+    }
+}
