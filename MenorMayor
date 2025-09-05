@@ -1,0 +1,40 @@
+//Pascal
+
+program MenorMayor;
+
+var
+  numero, mayor, menor: integer;
+  primeraVez: boolean;
+
+begin
+  writeln('Ingresa números para determinar cuál es el mayor y el menor. Para dejar de escribir números, escribe 0:');
+  primeraVez := true;
+
+  repeat
+    readln(numero);
+    if numero <> 0 then
+    begin
+      if primeraVez then
+      begin
+        mayor := numero;
+        menor := numero;
+        primeraVez := false;
+      end
+      else
+      begin
+        if numero > mayor then
+          mayor := numero;
+        if numero < menor then
+          menor := numero;
+      end;
+    end;
+  until numero = 0;
+
+  if not primeraVez then
+  begin
+    writeln('El mayor es: ', mayor);
+    writeln('El menor es: ', menor);
+  end
+  else
+    writeln('No ingresaste un valor comparable.');
+end.
