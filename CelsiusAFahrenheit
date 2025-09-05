@@ -1,0 +1,17 @@
+//Pascal
+
+program CelsiusAFahrenheit;
+    var 
+    temperaturaCelsius: real;
+    temperaturaFahrenheit: real;
+
+begin
+
+    writeln('Temperatura en C°: ');
+    readln(temperaturaCelsius);
+        
+    temperaturaFahrenheit := (temperaturaCelsius * 1.8 + 32);
+    
+    writeln('La temperatura es: ', temperaturaFahrenheit:0:2,'°F');
+    
+end.
