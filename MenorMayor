@@ -1,4 +1,36 @@
-//Pascal
+----------------Fortran----------------
+
+program MenorMayor
+    implicit none
+    integer :: numero, mayor, menor
+    logical :: primeraVez
+
+    primeraVez = .true.
+    print *, 'Ingresa números para determinar cuál es el mayor y el menor. Para dejar de escribir números, escribe 0:'
+
+    do
+        read(*,*) numero
+        if (numero == 0) exit
+
+        if (primeraVez) then
+            mayor = numero
+            menor = numero
+            primeraVez = .false.
+        else
+            if (numero > mayor) mayor = numero
+            if (numero < menor) menor = numero
+        end if
+    end do
+
+    if (.not.primeraVez) then
+        print *, 'El mayor es: ', mayor
+        print *, 'El menor es: ', menor
+    else
+        print *, 'No ingresaste un valor comparable.'
+    end if
+end program MenorMayor
+
+----------------Pascal----------------
 
 program MenorMayor;
 
@@ -38,3 +70,73 @@ begin
   else
     writeln('No ingresaste un valor comparable.');
 end.
+
+----------------C----------------
+
+#include <stdio.h>
+
+int main() {
+    int numero, mayor, menor;
+    int primeraVez = 1;
+
+    printf("Ingresa números para determinar cuál es el mayor y el menor. Para dejar de escribir números, escribe 0:\n");
+
+    do {
+        scanf("%d", &numero);
+        if (numero != 0) {
+            if (primeraVez) {
+                mayor = numero;
+                menor = numero;
+                primeraVez = 0;
+            } else {
+                if (numero > mayor) mayor = numero;
+                if (numero < menor) menor = numero;
+            }
+        }
+    } while (numero != 0);
+
+    if (!primeraVez) {
+        printf("El mayor es: %d\n", mayor);
+        printf("El menor es: %d\n", menor);
+    } else {
+        printf("No ingresaste un valor comparable.\n");
+    }
+
+    return 0;
+}
+
+----------------Java----------------
+
+import java.util.Scanner;
+
+public class MenorMayor {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int numero, mayor = 0, menor = 0;
+        boolean primeraVez = true;
+
+        System.out.println("Ingresa números para determinar cuál es el mayor y el menor. Para dejar de escribir números, escribe 0:");
+
+        do {
+            numero = sc.nextInt();
+            if (numero != 0) {
+                if (primeraVez) {
+                    mayor = numero;
+                    menor = numero;
+                    primeraVez = false;
+                } else {
+                    if (numero > mayor) mayor = numero;
+                    if (numero < menor) menor = numero;
+                }
+            }
+        } while (numero != 0);
+
+        if (!primeraVez) {
+            System.out.println("El mayor es: " + mayor);
+            System.out.println("El menor es: " + menor);
+        } else {
+            System.out.println("No ingresaste un valor comparable.");
+        }
+    }
+}
+
