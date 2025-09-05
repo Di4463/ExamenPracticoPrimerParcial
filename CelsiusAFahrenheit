@@ -1,4 +1,18 @@
-//Pascal
+----------------Fortran----------------
+
+program CelsiusAFahrenheit
+    implicit none
+    real :: temperaturaCelsius, temperaturaFahrenheit
+
+    print *, 'Temperatura en C°:'
+    read(*,*) temperaturaCelsius
+
+    temperaturaFahrenheit = temperaturaCelsius * 1.8 + 32
+
+    print '(A,F6.2,A)', 'La temperatura es: ', temperaturaFahrenheit, '°F'
+end program CelsiusAFahrenheit
+
+----------------Pascal----------------
 
 program CelsiusAFahrenheit;
     var 
@@ -15,3 +29,38 @@ begin
     writeln('La temperatura es: ', temperaturaFahrenheit:0:2,'°F');
     
 end.
+
+----------------C----------------
+
+#include <stdio.h>
+
+int main() {
+    float temperaturaCelsius, temperaturaFahrenheit;
+
+    printf("Temperatura en C°: ");
+    scanf("%f", &temperaturaCelsius);
+
+    temperaturaFahrenheit = temperaturaCelsius * 1.8 + 32;
+
+    printf("La temperatura es: %.2f°F\n", temperaturaFahrenheit);
+
+    return 0;
+}
+
+----------------Java----------------
+
+import java.util.Scanner;
+
+public class CelsiusAFahrenheit {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double temperaturaCelsius, temperaturaFahrenheit;
+
+        System.out.print("Temperatura en C°: ");
+        temperaturaCelsius = sc.nextDouble();
+
+        temperaturaFahrenheit = temperaturaCelsius * 1.8 + 32;
+
+        System.out.printf("La temperatura es: %.2f°F\n", temperaturaFahrenheit);
+    }
+}
