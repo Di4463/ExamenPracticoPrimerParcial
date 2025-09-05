@@ -1,0 +1,113 @@
+----------------Fortran----------------
+
+program ContarPositivosNegativos
+    implicit none
+    integer :: numero, positivos, negativos, i
+
+    positivos = 0
+    negativos = 0
+
+    print *, 'Ingresa números enteros (0 para terminar):'
+
+    do
+        read(*,*) numero
+        if (numero == 0) exit
+        if (numero > 0) positivos = positivos + 1
+        if (numero < 0) negativos = negativos + 1
+    end do
+
+    print *, 'Gráfico de valores ingresados:'
+    write(*,'(A,I0)') 'Positivos: ', positivos
+    do i = 1, positivos
+        write(*,'(A)', advance='no') '*'
+    end do
+    print *
+    write(*,'(A,I0)') 'Negativos: ', negativos
+    do i = 1, negativos
+        write(*,'(A)', advance='no') '*'
+    end do
+    print *
+end program ContarPositivosNegativos
+
+----------------Pascal----------------
+
+program ContarPositivosNegativos;
+
+var
+  numero, positivos, negativos: integer;
+
+begin
+  positivos := 0;
+  negativos := 0;
+
+  writeln('Ingresa números enteros (0 para terminar):');
+
+  repeat
+    readln(numero);
+    if numero > 0 then
+      positivos := positivos + 1
+    else if numero < 0 then
+      negativos := negativos + 1;
+  until numero = 0;
+
+  writeln('Gráfico de valores ingresados:');
+  writeln('Positivos: ', positivos, ' ');
+  writeln(StringOfChar('*', positivos));
+  writeln('Negativos: ', negativos, ' ');
+  writeln(StringOfChar('*', negativos));
+end.
+
+----------------C----------------
+
+#include <stdio.h>
+
+int main() {
+    int numero, positivos = 0, negativos = 0, i;
+
+    printf("Ingresa números enteros (0 para terminar):\n");
+
+    do {
+        scanf("%d", &numero);
+        if(numero > 0) positivos++;
+        else if(numero < 0) negativos++;
+    } while(numero != 0);
+
+    printf("Gráfico de valores ingresados:\n");
+    printf("Positivos: %d ", positivos);
+    for(i = 0; i < positivos; i++) printf("*");
+    printf("\n");
+
+    printf("Negativos: %d ", negativos);
+    for(i = 0; i < negativos; i++) printf("*");
+    printf("\n");
+
+    return 0;
+}
+
+----------------Java----------------
+
+import java.util.Scanner;
+
+public class ContarPositivosNegativos {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int numero, positivos = 0, negativos = 0;
+
+        System.out.println("Ingresa números enteros (0 para terminar):");
+
+        do {
+            numero = sc.nextInt();
+            if(numero > 0) positivos++;
+            else if(numero < 0) negativos++;
+        } while(numero != 0);
+
+        System.out.println("Gráfico de valores ingresados:");
+        System.out.print("Positivos: " + positivos + " ");
+        for(int i = 0; i < positivos; i++) System.out.print("*");
+        System.out.println();
+
+        System.out.print("Negativos: " + negativos + " ");
+        for(int i = 0; i < negativos; i++) System.out.print("*");
+        System.out.println();
+    }
+}
