@@ -1,0 +1,76 @@
+----------------Fortran----------------
+
+program FactorialFor
+    implicit none
+    integer :: n, i
+    integer :: factorial
+
+    print *, 'Ingresa un número entero:'
+    read(*,*) n
+
+    factorial = 1
+    do i = 1, n
+        factorial = factorial * i
+    end do
+
+    print *, 'El factorial de ', n, ' es ', factorial
+end program FactorialFor
+
+
+----------------Pascal----------------
+
+program FactorialFor;
+
+var
+  n, i: integer;
+  factorial: longint;
+
+begin
+  writeln('Ingresa un número entero:');
+  readln(n);
+
+  factorial := 1;
+  for i := 1 to n do
+    factorial := factorial * i;
+
+  writeln('El factorial de ', n, ' es ', factorial);
+end.
+
+----------------C----------------
+
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    long long factorial = 1;
+
+    printf("Ingresa un número entero: ");
+    scanf("%d", &n);
+
+    for(i = 1; i <= n; i++)
+        factorial *= i;
+
+    printf("El factorial de %d es %lld\n", n, factorial);
+    return 0;
+}
+
+----------------Java----------------
+
+import java.util.Scanner;
+
+public class FactorialFor {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n;
+        long factorial = 1;
+
+        System.out.print("Ingresa un número entero: ");
+        n = sc.nextInt();
+
+        for(int i = 1; i <= n; i++)
+            factorial *= i;
+
+        System.out.println("El factorial de " + n + " es " + factorial);
+    }
+}
+
